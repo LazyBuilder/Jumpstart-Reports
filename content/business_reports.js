@@ -1,4 +1,4 @@
-const urlList = fetch('content/report-list.json')
+const urlList = fetch('report-list.json')
 
 [
     "business-reports/AllerScan.html",
