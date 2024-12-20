@@ -1,4 +1,6 @@
-const urlList = [
+const urlList = fetch('content/report-list.json')
+
+[
     "business-reports/AllerScan.html",
     "business-reports/MindLink Telehealth.html",
     "business-reports/HomeProVet.html",
@@ -29,7 +31,7 @@ const urlList = [
 
 const container = document.getElementById("container_business_report");
 
-const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/"
+const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports"
 
 function createBoxes(urlList) {
     const row = document.createElement("div");
@@ -48,13 +50,13 @@ function createBoxes(urlList) {
         cardbody.classList.add("card-body");
 
         const title = document.createElement("h4");
-        title.textContent = (url.split("/")[1]).split(".")[0]
+        title.textContent = url['title']
         cardbody.appendChild(title);
 
 
         // Create a link element for the URL
         const link = document.createElement("a");
-        link.href = basePageUrl+url;
+        link.href = basePageUrl+url['filename'];
         link.textContent = "Get the Full Report"; // Or customize the link text
 
         // Optionally add an image or other content
@@ -71,24 +73,24 @@ function createBoxes(urlList) {
 createBoxes(urlList)
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const reportList = document.getElementById('report-list');
+//document.addEventListener('DOMContentLoaded', function() {
+//    const reportList = document.getElementById('report-list');
     
     // This function fetches the list of reports from a JSON file
-    fetch('content/report-list.json')
-        .then(response => response.json())
-        .then(data => {
-            data.reports.forEach(report => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = `business-reports/${report.filename}`;
-                a.textContent = report.title;
-                li.appendChild(a);
-                reportList.appendChild(li);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading reports:', error);
-            reportList.innerHTML = '<li>Error loading reports. Please try again later.</li>';
-        });
-});
+//    fetch('content/report-list.json')
+//        .then(response => response.json())
+//        .then(data => {
+//            data.reports.forEach(report => {
+//                const li = document.createElement('li');
+//                const a = document.createElement('a');
+//                a.href = `business-reports/${report.filename}`;
+//                a.textContent = report.title;
+//                li.appendChild(a);
+//                reportList.appendChild(li);
+//            });
+//        })
+//        .catch(error => {
+//            console.error('Error loading reports:', error);
+//            reportList.innerHTML = '<li>Error loading reports. Please try again later.</li>';
+//        });
+//});
