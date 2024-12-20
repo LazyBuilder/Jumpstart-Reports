@@ -1,34 +1,5 @@
 const urlList = fetch('report-list.json')
 
-[
-    "business-reports/AllerScan.html",
-    "business-reports/MindLink Telehealth.html",
-    "business-reports/HomeProVet.html",
-    "business-reports/UrbanZip Logistics.html",
-    "business-reports/NutriSync Health.html",
-    "business-reports/WasteNot Solutions.html",
-    "business-reports/CertTrackPro.html",
-    "business-reports/BakeStock Solutions.html",
-    "business-reports/DesignIterate.html",
-    "business-reports/RoomReadyNow.html",
-    "business-reports/BookQueuePro.html",
-    "business-reports/DentalRemind+.html",
-    "business-reports/TruckTrackr.html",
-    "business-reports/FitProgressPro.html",
-    "business-reports/BrewCyclePlan.html",
-    "business-reports/QuoteCompareNow.html",
-    "business-reports/ReThreads.html",
-    "business-reports/KiddieBites.html",
-    "business-reports/PawPal.html",
-    "business-reports/GreenThumb AI.html",
-    "business-reports/LocalLens.html",
-    "business-reports/AllerScan.html",
-    "business-reports/FinFluence.html",
-    "business-reports/GearShare.html",
-    "business-reports/SkinCycle.html",
-    "business-reports/MoodReads.html"
-];
-
 const container = document.getElementById("container_business_report");
 
 const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports"
