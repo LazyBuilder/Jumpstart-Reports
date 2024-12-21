@@ -1,23 +1,22 @@
-
-urlList = []
-
-fetch('content/report-list.json')
-    .then(
-        response => response.json()
-    )
-    .then(jsondoc => {
-        urlList = jsondoc.reports;
-        }
-    )
-    .catch(
-        error => {
-            console.error('Error loading reports:', error);
-        }
-    );
+let urlList = [];
+//fetch('content/report-list.json')
+//    .then(
+//        response => response.json()
+//    )
+//    .then(data => {
+//        urlList = data.reports;
+//        console.log('JSON Received');
+//       }
+//    )
+//    .catch(
+//        error => {
+//            console.error('Error loading reports:', error);
+//        }
+//    );
 
 const container = document.getElementById("container_business_report");
 
-const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports"
+const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports";
 
 function createBoxes() {
     const row = document.createElement("div");
@@ -43,7 +42,7 @@ function createBoxes() {
         // Create a link element for the URL
         const link = document.createElement("a");
         link.href = basePageUrl+url['filename'];
-        link.textContent = "Get the Full Report"; // Or customize the link text
+        link.textContent = "Read the Report"; // Or customize the link text
 
         // Optionally add an image or other content
         // const image = document.createElement("img");
@@ -56,7 +55,20 @@ function createBoxes() {
     });
 }
 
-createBoxes()
+
+fetch('content/report-list.json')
+    .then(response => response.json())
+    .then(data => {
+        urlList = data.reports;
+        console.log('JSON Received');
+        createBoxes(); // Call createBoxes() here, after data is loaded
+    })
+    .catch(error => {
+        console.error('Error loading reports:', error);
+        container.innerHTML = '<p>Error loading reports. Please try again later.</p>';
+    });
+
+//createBoxes()
 
 
 //document.addEventListener('DOMContentLoaded', function() {
