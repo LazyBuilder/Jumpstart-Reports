@@ -1,4 +1,6 @@
+
 urlList = []
+
 fetch('content/report-list.json')
     .then(
         response => response.json()
