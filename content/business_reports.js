@@ -1,4 +1,16 @@
-const urlList = fetch('content/report-list.json').then().then().catch();
+fetch('content/report-list.json')
+    .then(
+        response => response.json()
+    )
+    .then(jsondoc => {
+        urlList = jsondoc.reports;
+        }
+    )
+    .catch(
+        error => {
+            console.error('Error loading reports:', error);
+        }
+    );
 
 const container = document.getElementById("container_business_report");
 
