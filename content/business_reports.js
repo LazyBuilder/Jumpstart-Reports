@@ -1,4 +1,4 @@
-const urlList = fetch('content/report-list.json')
+const urlList = fetch('content/report-list.json').then().then().catch();
 
 const container = document.getElementById("container_business_report");
 
