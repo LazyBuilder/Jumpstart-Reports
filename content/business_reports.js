@@ -16,7 +16,7 @@ let urlList = [];
 
 const container = document.getElementById("container_business_report");
 
-const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports";
+const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports/";
 
 function createBoxes() {
     const row = document.createElement("div");
