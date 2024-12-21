@@ -56,7 +56,7 @@ function createBoxes() {
 }
 
 
-fetch('content/report-list.json')
+fetch('https://lazybuilder.github.io/Jumpstart-Reports/content/report-list.json')
     .then(response => response.json())
     .then(data => {
         urlList = data.reports;
