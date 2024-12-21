@@ -1,3 +1,6 @@
+
+urlList = []
+
 fetch('content/report-list.json')
     .then(
         response => response.json()
@@ -16,7 +19,7 @@ const container = document.getElementById("container_business_report");
 
 const basePageUrl = "https://lazybuilder.github.io/Jumpstart-Reports/business-reports"
 
-function createBoxes(urlList) {
+function createBoxes() {
     const row = document.createElement("div");
     row.classList.add("row","row-cols-1","row-cols-sm-2","row-cols-md-3","g-3");
     
@@ -53,7 +56,7 @@ function createBoxes(urlList) {
     });
 }
 
-createBoxes(urlList)
+createBoxes()
 
 
 //document.addEventListener('DOMContentLoaded', function() {
