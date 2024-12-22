@@ -42,7 +42,7 @@ function createBoxes() {
         // Create a link element for the URL
         const link = document.createElement("a");
         link.href = basePageUrl+url['filename'];
-        link.textContent = "Read the Report"; // Or customize the link text
+        link.textContent = "Get the Full Report"; // Or customize the link text
 
         // Optionally add an image or other content
         // const image = document.createElement("img");
@@ -65,7 +65,7 @@ fetch('https://lazybuilder.github.io/Jumpstart-Reports/content/report-list.json'
     })
     .catch(error => {
         console.error('Error loading reports:', error);
-        container.innerHTML = '<p>Error loading reports. Please try again later.</p>';
+        //container.innerHTML = '<p>Error loading reports. Please try again later.</p>';
     });
 
 //createBoxes()
